@@ -1,0 +1,608 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mental Health Symposium 2026 · Registration</title>
+    <!-- Google Font & minimal reset -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,400;14..32,500;14..32,600&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            /* background: linear-gradient(135deg, #6eb0dc 0%, #f26ad9 100%); */
+            background-image:url(mind.jpg);
+            background-size: cover;
+            background-position: center; */
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            padding: 2rem 1.5rem;
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+            min-height: 100vh;
+        }
+        .form-container {
+            max-width: 1000px;
+            width: 100%;
+            /* background-image: url(mind.jpg); */
+            background: rgba(111, 173, 228, 0.356);
+            background-size: repeat;
+            background-position: center;
+            display: flex;
+            flex-direction: column;
+            /* background: #ffffff; */
+            border-radius: 32px;
+            box-shadow: 0 20px 40px -12px rgba(0,20,30,0.25);
+            padding: 2.5rem 2.8rem;
+            transition: all 0.2s ease;
+        }
+        @media (max-width: 640px) {
+            .form-container {
+                padding: 1.5rem;
+            }
+        }
+        h1 {
+            font-size: 2.1rem;
+            font-weight: 600;
+            color: #000000;
+            letter-spacing: -0.02em;
+            border-left: 6px solid #1aa6ecda;
+            padding-left: 1.2rem;
+            margin-bottom: 0.75rem;
+        }
+        .theme-badge {
+            background: #1e97e8c8;
+            color: #000000;
+            padding: 0.5rem 1.2rem;
+            border-radius: 40px;
+            font-size: 0.9rem;
+            font-weight: 500;
+            display: inline-block;
+            margin-bottom: 1.2rem;
+        }
+        .form-desc {
+            background: #4d92edab;
+            border-radius: 18px;
+            padding: 1.2rem 1.8rem;
+            margin: 1.5rem 0 2rem 0;
+            color: #000000;
+            border: 1px solid #dae8f2;
+            font-size: 0.95rem;
+            line-height: 1.6;
+        }
+        .form-desc strong {
+            font-weight: 600;
+            color: #000000;
+        }
+        .section-title {
+            font-weight: 600;
+            font-size: 1.3rem;
+            color: #000000;
+            margin: 2rem 0 1.2rem 0;
+            padding-bottom: 0.4rem;
+            border-bottom: 2px solid #dce9f2;
+        }
+        .section-title:first-of-type {
+            margin-top: 0.5rem;
+        }
+        .grid-2 {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1.2rem 1.8rem;
+        }
+        @media (max-width: 700px) {
+            .grid-2 {
+                grid-template-columns: 1fr;
+                gap: 0.8rem;
+            }
+        }
+        .field-group {
+            display: flex;
+            flex-direction: column;
+            gap: 0.25rem;
+            margin-bottom: 0.5rem;
+        }
+        .field-group.full-width {
+            grid-column: 1 / -1;
+        }
+        label {
+            font-weight: 500;
+            font-size: 0.9rem;
+            color: #000000;
+            display: flex;
+            align-items: center;
+            gap: 4px;
+        }
+        label .required {
+            color: #b22234;
+            margin-left: 3px;
+        }
+        input, select, textarea {
+            font-family: 'Inter', sans-serif;
+            background: #fdfeff;
+            border: 1px solid #7db7e3;
+            border-radius: 14px;
+            padding: 0.7rem 1rem;
+            font-size: 0.95rem;
+            transition: 0.15s ease;
+            width: 100%;
+            color: #0a2738;
+        }
+        input:focus, select:focus, textarea:focus {
+            outline: none;
+            border-color: #2a7faa;
+            box-shadow: 0 0 0 3px rgba(42,127,170,0.2);
+            background: #031f509f;
+        }
+        textarea {
+            min-height: 80px;
+            resize: vertical;
+            background: #fafbfbcb;
+        }
+        .inline-options {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            gap: 1rem 2rem;
+            background: #02224178;
+            padding: 0.6rem 1.2rem;
+            border-radius: 20px;
+            border: 1px solid #dae8f2;
+        }
+        .inline-options label {
+            font-weight: 400;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            cursor: pointer;
+        }
+        .inline-options input[type="radio"],
+        .inline-options input[type="checkbox"] {
+            width: 18px;
+            height: 18px;
+            accent-color: #000000;
+        }
+        .checkbox-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            gap: 0.5rem 1rem;
+            background: #0222418f;
+            padding: 0.8rem 1.2rem;
+            border-radius: 20px;
+            border: 1px solid #dae8f2;
+        }
+        .checkbox-grid label {
+            font-weight: 400;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            cursor: pointer;
+        }
+        .checkbox-grid input[type="checkbox"] {
+            width: 18px;
+            height: 18px;
+            accent-color: #1f6f8f;
+            flex-shrink: 0;
+        }
+        .consent-group {
+            background: #02224175;
+            padding: 1rem 1.5rem;
+            border-radius: 20px;
+            border: 1px solid #cde0ed;
+            display: flex;
+            flex-direction: column;
+            gap: 0.6rem;
+            margin: 0.5rem 0 0.8rem;
+        }
+        .consent-group label {
+            font-weight: 400;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            cursor: pointer;
+        }
+        .consent-group input[type="checkbox"] {
+            width: 20px;
+            height: 20px;
+            accent-color: #000000;
+            flex-shrink: 0;
+        }
+        .btn-submit {
+            background: #0b2a3b87;
+            color: white;
+            border: none;
+            padding: 1rem 2.8rem;
+            border-radius: 60px;
+            font-weight: 600;
+            font-size: 1.15rem;
+            letter-spacing: 0.3px;
+            margin: 2rem 0 0.5rem;
+            cursor: pointer;
+            transition: 0.2s;
+            width: 100%;
+            box-shadow: 0 8px 16px -6px rgba(11,42,59,0.25);
+        }
+        .btn-submit:hover {
+            background: #1c4c66;
+            transform: scale(1.01);
+            box-shadow: 0 12px 24px -8px rgba(11,42,59,0.35);
+        }
+        .btn-submit:active {
+            background: #08303f;
+            transform: scale(0.98);
+        }
+        .footer-meta {
+            margin-top: 2rem;
+            border-top: 1px solid #dce9f2;
+            padding-top: 1.8rem;
+            font-size: 0.85rem;
+            color: #3a627a;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            gap: 0.8rem;
+        }
+        .footer-meta span {
+            background: #ecf3f9;
+            padding: 0.2rem 0.9rem;
+            border-radius: 30px;
+        }
+        .note {
+            font-size: 0.9rem;
+            color: #2f5a72;
+            background: #eef6fd;
+            padding: 0.4rem 1.2rem;
+            border-radius: 40px;
+            display: inline-block;
+        }
+        .hidden {
+            display: none;
+        }
+        #thankYouMessage {
+            background: #dff0e6;
+            padding: 2rem 2rem;
+            border-radius: 28px;
+            text-align: center;
+            color: #0a3a2a;
+            margin-top: 1.5rem;
+            border: 1px solid #b6d5c4;
+        }
+        #thankYouMessage h3 {
+            font-size: 1.8rem;
+            margin-bottom: 0.5rem;
+        }
+        #formErrors {
+            color: #b22234;
+            background: #ffe9e9;
+            padding: 0.8rem 1.5rem;
+            border-radius: 30px;
+            margin: 1rem 0 0.5rem;
+            font-weight: 500;
+            border: 1px solid #f5c2c2;
+        }
+    </style>
+</head>
+<body>
+<div class="form-container" id="app">
+    <h1>🧠 Mental Health Symposium 2026</h1>
+    <div class="theme-badge">4–5 August 2026 · Mount Kenya University – Kitale ODeL Centre</div>
+    <div class="form-desc">
+        <strong>Theme:</strong> Mental Health: A National Priority • A Global Concern • One Issue • Many Perspectives • One Nation • One Resolve<br>
+        Please complete this registration form accurately. The information collected will be used for registration, communication, identification, catering, attendance management, certificate preparation, and symposium planning.
+    </div>
+
+    <!-- FORM -->
+    <form id="registrationForm" method="POST" action="https://script.google.com/macros/s/AKfycbyUc0h3T6TnIGUzYSDYFJEbyO9H8oHyQeHm6IZXSjEzAmHia7kIP7Osgd_Ll0FZ0zlu/exec" target="_blank">
+        <!-- hidden field to simulate Google Form / sheet integration -->
+        <input type="hidden" name="formType" value="symposium2026">
+
+        <!-- SECTION A: Personal -->
+        <div class="section-title">Section A · Personal Information</div>
+        <div class="grid-2">
+            <div class="field-group">
+                <label>Full Name <span class="required">*</span></label>
+                <input type="text" name="FullName" placeholder="As on certificate" required>
+            </div>
+            <div class="field-group">
+                <label>Gender</label>
+                <select name="Gender">
+                    <option value="">Select</option>
+                    <option>Male</option><option>Female</option><option>Non-binary</option><option>Prefer not to say</option>
+                </select>
+            </div>
+            <div class="field-group">
+                <label>Age Group</label>
+                <select name="AgeGroup">
+                    <option value="">Select</option>
+                    <option>18–24</option><option>25–34</option><option>35–44</option><option>45–54</option><option>55–64</option><option>65+</option>
+                </select>
+            </div>
+            <div class="field-group">
+                <label>Mobile Number <span class="required">*</span></label>
+                <input type="tel" name="MobileNumber" placeholder="+254 7XX XXX XXX" required>
+            </div>
+            <div class="field-group">
+                <label>Email Address <span class="required">*</span></label>
+                <input type="email" name="Email" placeholder="you@gmail.com" required>
+            </div>
+            <div class="field-group">
+                <label>County</label>
+                <input type="text" name="County" placeholder="e.g. Nairobi">
+            </div>
+            <div class="field-group full-width">
+                <label>Country</label>
+                <input type="text" name="Country" placeholder="Kenya" value="Kenya">
+            </div>
+        </div>
+
+        <!-- SECTION B: Professional -->
+        <div class="section-title">Section B · Professional Information</div>
+        <div class="grid-2">
+            <div class="field-group">
+                <label>Organization / Institution <span class="required">*</span></label>
+                <input type="text" name="Organization" placeholder="e.g. Ministry of Health" required>
+            </div>
+            <div class="field-group">
+                <label>Department</label>
+                <input type="text" name="Department" placeholder="e.g. Mental Health Unit">
+            </div>
+            <div class="field-group">
+                <label>Position / Designation</label>
+                <input type="text" name="Position" placeholder="e.g. Program Officer">
+            </div>
+            <div class="field-group">
+                <label>Profession / Occupation</label>
+                <input type="text" name="Profession" placeholder="e.g. Psychologist">
+            </div>
+        </div>
+
+        <!-- SECTION C: Participation -->
+        <div class="section-title">Section C · Participation</div>
+        <div class="grid-2">
+            <div class="field-group">
+                <label>Attendance <span class="required">*</span></label>
+                <select name="Attendance" required>
+                    <option value="">Select</option>
+                    <option>Day 1</option><option>Day 2</option><option>Both Days</option>
+                </select>
+            </div>
+            <div class="field-group">
+                <label>Mode of Attendance <span class="required">*</span></label>
+                <select name="ModeAttendance" required>
+                    <option value="">Select</option>
+                    <option>Physical</option><option>Virtual</option>
+                </select>
+            </div>
+            <div class="field-group full-width">
+                <label>Have you attended a previous Global Mental Health Symposium?</label>
+                <div class="inline-options">
+                    <label><input type="radio" name="PrevAttended" value="Yes"> Yes</label>
+                    <label><input type="radio" name="PrevAttended" value="No" checked> No</label>
+                </div>
+            </div>
+        </div>
+
+        <!-- SECTION D: Catering -->
+        <div class="section-title">Section D · Catering</div>
+        <div class="grid-2">
+            <div class="field-group">
+                <label>Lunch Required</label>
+                <select name="LunchRequired">
+                    <option value="">Select</option>
+                    <option>Day 1</option><option>Day 2</option><option>Both Days</option><option>None</option>
+                </select>
+            </div>
+            <div class="field-group">
+                <label>Tea Break Required</label>
+                <select name="TeaRequired">
+                    <option value="">Select</option>
+                    <option>Day 1</option><option>Day 2</option><option>Both Days</option><option>None</option>
+                </select>
+            </div>
+            <div class="field-group full-width">
+                <label>Dietary Requirements</label>
+                <select name="DietaryRequirements">
+                    <option value="None">None</option>
+                    <option>Vegetarian</option><option>Vegan</option><option>Gluten-Free</option>
+                    <option>Other (Specify below)</option>
+                </select>
+                <input type="text" name="DietaryOther" placeholder="If 'Other', please specify" style="margin-top:6px;">
+            </div>
+        </div>
+
+        <!-- SECTION E: Special Needs -->
+        <div class="section-title">Section E · Special Needs</div>
+        <div class="field-group">
+            <label>Do you require any accessibility or special assistance?</label>
+            <div class="inline-options" style="gap:1.5rem;">
+                <label><input type="radio" name="SpecialNeeds" value="No" checked> No</label>
+                <label><input type="radio" name="SpecialNeeds" value="Yes"> Yes (please specify)</label>
+            </div>
+            <input type="text" name="SpecialNeedsDetail" placeholder="If yes, describe assistance needed" style="margin-top:6px;">
+        </div>
+
+        <!-- SECTION F: Interests -->
+        <div class="section-title">Section F · Interests</div>
+        <div class="checkbox-grid">
+            <label><input type="checkbox" name="Interests" value="Mental Health in Education"> Mental Health in Education</label>
+            <label><input type="checkbox" name="Interests" value="Family & Parenting"> Family & Parenting</label>
+            <label><input type="checkbox" name="Interests" value="Youth Mental Health"> Youth Mental Health</label>
+            <label><input type="checkbox" name="Interests" value="Workplace Well-being"> Workplace Well-being</label>
+            <label><input type="checkbox" name="Interests" value="Trauma & Resilience"> Trauma & Resilience</label>
+            <label><input type="checkbox" name="Interests" value="Addiction & Recovery"> Addiction & Recovery</label>
+            <label><input type="checkbox" name="Interests" value="Faith & Mental Health"> Faith & Mental Health</label>
+            <label><input type="checkbox" name="Interests" value="Research & Innovation"> Research & Innovation</label>
+            <label><input type="checkbox" name="Interests" value="Policy & Advocacy"> Policy & Advocacy</label>
+            <label><input type="checkbox" name="Interests" value="Community Mental Health"> Community Mental Health</label>
+            <label><input type="checkbox" name="Interests" value="Other"> Other</label>
+        </div>
+
+        <!-- SECTION G: Expectations -->
+        <div class="section-title">Section G · Expectations</div>
+        <div class="field-group">
+            <label>What do you hope to gain from this symposium?</label>
+            <textarea name="Expectations" placeholder="Share your thoughts..."></textarea>
+        </div>
+
+        <!-- SECTION H: Commitment -->
+        <div class="section-title">Section H · Commitment</div>
+        <div class="grid-2">
+            <div class="field-group">
+                <label>I wish to become a Mental Health Ambassador.</label>
+                <div class="inline-options">
+                    <label><input type="radio" name="Ambassador" value="Yes"> Yes</label>
+                    <label><input type="radio" name="Ambassador" value="No" checked> No</label>
+                </div>
+            </div>
+            <div class="field-group">
+                <label>I wish to become a signatory to the Kitale Declaration.</label>
+                <div class="inline-options">
+                    <label><input type="radio" name="Signatory" value="Yes"> Yes</label>
+                    <label><input type="radio" name="Signatory" value="No" checked> No</label>
+                </div>
+            </div>
+        </div>
+
+        <!-- SECTION I: Consent -->
+        <div class="section-title">Section I · Consent</div>
+        <div class="consent-group">
+            <label><input type="checkbox" name="ConsentAccurate" value="Yes" required> I confirm that the information provided is accurate. <span class="required">*</span></label>
+            <label><input type="checkbox" name="ConsentPhoto" value="Yes"> I consent to photography and video recording during the symposium.</label>
+            <label><input type="checkbox" name="ConsentComm" value="Yes"> I consent to receive future communication about mental health programmes.</label>
+        </div>
+
+        <!-- submit -->
+        <button type="submit" class="btn-submit" id="submitBtn">Register for Symposium</button>
+        <div id="formErrors" class="hidden"></div>
+    </form>
+
+    <!-- thank you message (hidden initially) -->
+    <div id="thankYouMessage" style="display:none;">
+        <h3>✅ Thank you for registering!</h3>
+        <p style="font-size:1.1rem;">Your registration has been received successfully.<br>You will receive updates about the programme, logistics, and important announcements before the symposium.</p>
+        <p style="margin-top:0.8rem; font-weight:500;">We look forward to welcoming you to the Global Mental Health Symposium 2026.</p>
+    </div>
+
+    <!-- data insights (static) -->
+    <div class="footer-meta">
+        <span>📊 Total participants · by county · org · profession</span>
+        <span>📅 Day 1 / Day 2 / Both · Physical / Virtual</span>
+        <span>🍽️ Catering · dietary · accessibility</span>
+        <span>📋 Certificate names · Ambassadors · Signatories</span>
+    </div>
+</div>
+
+<script>
+    (function() {
+        const form = document.getElementById('registrationForm');
+        const thankYou = document.getElementById('thankYouMessage');
+        const errorsDiv = document.getElementById('formErrors');
+        const submitBtn = document.getElementById('submitBtn');
+
+        // In production, you would handle the fetch to Google Sheet via Apps Script.
+        // For this demo, we show a success message and log data.
+        form.addEventListener('submit', function(e) {
+            e.preventDefault();
+
+            // basic validation: required fields (HTML5 handles most, but we double-check)
+            const requiredFields = form.querySelectorAll('[required]');
+            let valid = true;
+            let errorMsg = '';
+
+            requiredFields.forEach(field => {
+                if (!field.value.trim()) {
+                    valid = false;
+                    errorMsg = 'Please fill in all required fields.';
+                    field.style.borderColor = '#b22234';
+                } else {
+                    field.style.borderColor = '';
+                }
+            });
+
+            // consent checkbox
+            const consentAcc = form.querySelector('input[name="ConsentAccurate"]');
+            if (!consentAcc.checked) {
+                valid = false;
+                errorMsg = 'You must confirm that the information is accurate.';
+                consentAcc.style.outline = '2px solid #b22234';
+            } else {
+                consentAcc.style.outline = '';
+            }
+
+            if (!valid) {
+                errorsDiv.textContent = errorMsg || 'Please correct the highlighted fields.';
+                errorsDiv.classList.remove('hidden');
+                return;
+            } else {
+                errorsDiv.classList.add('hidden');
+            }
+
+            // Collect data (for demo, we'll show a success message and log to console)
+            const formData = new FormData(form);
+            const dataObj = {};
+            for (let [key, value] of formData.entries()) {
+                // handle multiple checkboxes (Interests)
+                if (key === 'Interests') {
+                    if (!dataObj[key]) dataObj[key] = [];
+                    dataObj[key].push(value);
+                } else {
+                    dataObj[key] = value;
+                }
+            }
+
+            console.log(' Registration Data (would be sent to Google Sheet):', dataObj);
+
+            // Simulate sending to Google Sheet (you would use fetch with POST to Apps Script URL)
+            // For demonstration, we show the thank you and hide form
+            form.style.display = 'none';
+            thankYou.style.display = 'block';
+            submitBtn.disabled = true;
+
+            // You can also send via fetch if you have the Apps Script URL:
+            // Replace this comment block with:
+
+fetch('https://script.google.com/macros/s/AKfycby7WRoIhVr253T0Rw644Fpl7i0gdpIZe-OowfatSWb-joxlrLsMtRRjCF-LeBuOGemw/exec', {
+  method: 'POST',
+  mode: 'no-cors', // Important for cross-origin requests
+  headers: {
+    'Content-Type': 'application/json',
+  },
+  body: JSON.stringify(dataObj)
+})
+.then(response => {
+  // Since we're using no-cors, we can't read the response
+  // But the data will still be sent
+  form.style.display = 'none';
+  thankYou.style.display = 'block';
+  submitBtn.disabled = true;
+})
+.catch(error => {
+  console.error('Error:', error);
+  errorsDiv.textContent = 'There was an error submitting your registration. Please try again.';
+  errorsDiv.classList.remove('hidden');
+});
+            // fetch('https://script.google.com/macros/s/AKfycbz2wZ9T5X7K3Q8P2Y6R1L4M9N7J3V5B8C0D2F4G6H8I0K/exec', {
+            //   method: 'POST',
+            //   body: formData
+            // }).then(...)
+
+            // reset after some time? Not needed.
+        });
+
+        // remove error styling on input
+        form.querySelectorAll('input, select, textarea').forEach(el => {
+            el.addEventListener('input', function() {
+                this.style.borderColor = '';
+                if (this.name === 'ConsentAccurate') this.style.outline = '';
+            });
+        });
+    })();
+</script>
+<!-- note: the form action points to a dummy Google Apps Script URL – replace with your own published script URL -->
+</body>
+</html>
